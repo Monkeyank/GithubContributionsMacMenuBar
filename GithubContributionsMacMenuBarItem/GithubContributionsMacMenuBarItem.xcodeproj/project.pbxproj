@@ -17,6 +17,7 @@
 		B278BCF8240E1804005E2751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B278BCF7240E1804005E2751 /* Assets.xcassets */; };
 		B278BCFB240E1804005E2751 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B278BCFA240E1804005E2751 /* Preview Assets.xcassets */; };
 		B278BCFE240E1804005E2751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B278BCFC240E1804005E2751 /* Main.storyboard */; };
+		B27B0FEF2411BB0A003EA360 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B0FEE2411BB0A003EA360 /* DataStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		B278BCFD240E1804005E2751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B278BCFF240E1804005E2751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B278BD00240E1804005E2751 /* GithubContributionsMacMenuBarItem.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubContributionsMacMenuBarItem.entitlements; sourceTree = "<group>"; };
+		B27B0FEE2411BB0A003EA360 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				B278BCF3240E1802005E2751 /* AppDelegate.swift */,
 				B20489B82410BBED00841AC2 /* ExtensionFunctions.swift */,
 				B20489B42410B17700841AC2 /* PullGitData.swift */,
+				B27B0FEE2411BB0A003EA360 /* DataStorage.swift */,
 				B20489B62410B6D500841AC2 /* ContributionDepth.swift */,
 				B278BCF7240E1804005E2751 /* Assets.xcassets */,
 				B278BCFF240E1804005E2751 /* Info.plist */,
@@ -174,6 +177,7 @@
 				B20489B32410AE3400841AC2 /* PreferencesViewController.swift in Sources */,
 				B20489B72410B6D500841AC2 /* ContributionDepth.swift in Sources */,
 				B20489B52410B17700841AC2 /* PullGitData.swift in Sources */,
+				B27B0FEF2411BB0A003EA360 /* DataStorage.swift in Sources */,
 				B20489B92410BBED00841AC2 /* ExtensionFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
