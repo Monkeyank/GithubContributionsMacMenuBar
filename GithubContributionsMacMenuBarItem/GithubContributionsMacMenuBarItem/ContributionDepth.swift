@@ -41,11 +41,11 @@ class ContributionDepth {
 }
 
 struct PerDayData {
-    let level: Int
+    let contributiondepth: Int
     let count: Int
     let date: String
     var description: String{
-        return "contributiondepth: \(level) count: \(count) date: \(date)"
+        return "contributiondepth: \(contributiondepth) count: \(count) date: \(date)"
     }
     
     static let `default` = [[PerDayData]] (repeating: [PerDayData] (repeating: PerDayData(level: 0, count: 0, date: "dummy"), count: 50), count: 7)
