@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B20489AF2410AE0700841AC2 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B20489AE2410AE0700841AC2 /* Preferences.storyboard */; };
+		B20489B12410AE2400841AC2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20489B02410AE2400841AC2 /* MainViewController.swift */; };
+		B20489B32410AE3400841AC2 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20489B22410AE3400841AC2 /* PreferencesViewController.swift */; };
 		B278BCF4240E1802005E2751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278BCF3240E1802005E2751 /* AppDelegate.swift */; };
 		B278BCF6240E1802005E2751 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278BCF5240E1802005E2751 /* ContentView.swift */; };
 		B278BCF8240E1804005E2751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B278BCF7240E1804005E2751 /* Assets.xcassets */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B20489AE2410AE0700841AC2 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
+		B20489B02410AE2400841AC2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B20489B22410AE3400841AC2 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		B278BCF0240E1802005E2751 /* GithubContributionsMacMenuBarItem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubContributionsMacMenuBarItem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B278BCF3240E1802005E2751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B278BCF5240E1802005E2751 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +42,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B20489A92410AD8900841AC2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B278BCFC240E1804005E2751 /* Main.storyboard */,
+				B20489B02410AE2400841AC2 /* MainViewController.swift */,
+				B20489AE2410AE0700841AC2 /* Preferences.storyboard */,
+				B20489B22410AE3400841AC2 /* PreferencesViewController.swift */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		B278BCE7240E1802005E2751 = {
 			isa = PBXGroup;
 			children = (
@@ -55,10 +72,10 @@
 		B278BCF2240E1802005E2751 /* GithubContributionsMacMenuBarItem */ = {
 			isa = PBXGroup;
 			children = (
+				B20489A92410AD8900841AC2 /* Storyboards */,
 				B278BCF3240E1802005E2751 /* AppDelegate.swift */,
 				B278BCF5240E1802005E2751 /* ContentView.swift */,
 				B278BCF7240E1804005E2751 /* Assets.xcassets */,
-				B278BCFC240E1804005E2751 /* Main.storyboard */,
 				B278BCFF240E1804005E2751 /* Info.plist */,
 				B278BD00240E1804005E2751 /* GithubContributionsMacMenuBarItem.entitlements */,
 				B278BCF9240E1804005E2751 /* Preview Content */,
@@ -135,6 +152,7 @@
 				B278BCFE240E1804005E2751 /* Main.storyboard in Resources */,
 				B278BCFB240E1804005E2751 /* Preview Assets.xcassets in Resources */,
 				B278BCF8240E1804005E2751 /* Assets.xcassets in Resources */,
+				B20489AF2410AE0700841AC2 /* Preferences.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,8 +163,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B20489B12410AE2400841AC2 /* MainViewController.swift in Sources */,
 				B278BCF6240E1802005E2751 /* ContentView.swift in Sources */,
 				B278BCF4240E1802005E2751 /* AppDelegate.swift in Sources */,
+				B20489B32410AE3400841AC2 /* PreferencesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
