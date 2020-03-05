@@ -33,7 +33,7 @@ class ContributionDepth {
             case "#196127": contributiondepth = 4
             default: contributiondepth = 0
             }
-            perDayData[y].append(PerDayData(level: contributiondepth, count:Int(parameter[7].trim("data-count=\"", "\""))!,
+            perDayData[y].append(PerDayData(contributiondepth: contributiondepth, count:Int(parameter[7].trim("data-count=\"", "\""))!,
                 date: parameter[8].trim("data-date=\"", "\"/>")))
         }
         return perDayData
@@ -48,5 +48,5 @@ struct PerDayData {
         return "contributiondepth: \(contributiondepth) count: \(count) date: \(date)"
     }
     
-    static let `default` = [[PerDayData]] (repeating: [PerDayData] (repeating: PerDayData(level: 0, count: 0, date: "dummy"), count: 50), count: 7)
+    static let `default` = [[PerDayData]] (repeating: [PerDayData] (repeating: PerDayData(contributiondepth: 0, count: 0, date: "dummy"), count: 50), count: 7)
 }
