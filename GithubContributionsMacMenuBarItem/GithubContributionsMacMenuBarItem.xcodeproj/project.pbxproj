@@ -10,8 +10,10 @@
 		B20489AF2410AE0700841AC2 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B20489AE2410AE0700841AC2 /* Preferences.storyboard */; };
 		B20489B12410AE2400841AC2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20489B02410AE2400841AC2 /* MainViewController.swift */; };
 		B20489B32410AE3400841AC2 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20489B22410AE3400841AC2 /* PreferencesViewController.swift */; };
+		B20489B52410B17700841AC2 /* PullGitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20489B42410B17700841AC2 /* PullGitData.swift */; };
+		B20489B72410B6D500841AC2 /* ContributionDepth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20489B62410B6D500841AC2 /* ContributionDepth.swift */; };
+		B20489B92410BBED00841AC2 /* ExtensionFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20489B82410BBED00841AC2 /* ExtensionFunctions.swift */; };
 		B278BCF4240E1802005E2751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278BCF3240E1802005E2751 /* AppDelegate.swift */; };
-		B278BCF6240E1802005E2751 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278BCF5240E1802005E2751 /* ContentView.swift */; };
 		B278BCF8240E1804005E2751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B278BCF7240E1804005E2751 /* Assets.xcassets */; };
 		B278BCFB240E1804005E2751 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B278BCFA240E1804005E2751 /* Preview Assets.xcassets */; };
 		B278BCFE240E1804005E2751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B278BCFC240E1804005E2751 /* Main.storyboard */; };
@@ -21,9 +23,11 @@
 		B20489AE2410AE0700841AC2 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		B20489B02410AE2400841AC2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B20489B22410AE3400841AC2 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		B20489B42410B17700841AC2 /* PullGitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullGitData.swift; sourceTree = "<group>"; };
+		B20489B62410B6D500841AC2 /* ContributionDepth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionDepth.swift; sourceTree = "<group>"; };
+		B20489B82410BBED00841AC2 /* ExtensionFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFunctions.swift; sourceTree = "<group>"; };
 		B278BCF0240E1802005E2751 /* GithubContributionsMacMenuBarItem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubContributionsMacMenuBarItem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B278BCF3240E1802005E2751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B278BCF5240E1802005E2751 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B278BCF7240E1804005E2751 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B278BCFA240E1804005E2751 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B278BCFD240E1804005E2751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,7 +78,9 @@
 			children = (
 				B20489A92410AD8900841AC2 /* Storyboards */,
 				B278BCF3240E1802005E2751 /* AppDelegate.swift */,
-				B278BCF5240E1802005E2751 /* ContentView.swift */,
+				B20489B82410BBED00841AC2 /* ExtensionFunctions.swift */,
+				B20489B42410B17700841AC2 /* PullGitData.swift */,
+				B20489B62410B6D500841AC2 /* ContributionDepth.swift */,
 				B278BCF7240E1804005E2751 /* Assets.xcassets */,
 				B278BCFF240E1804005E2751 /* Info.plist */,
 				B278BD00240E1804005E2751 /* GithubContributionsMacMenuBarItem.entitlements */,
@@ -164,9 +170,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B20489B12410AE2400841AC2 /* MainViewController.swift in Sources */,
-				B278BCF6240E1802005E2751 /* ContentView.swift in Sources */,
 				B278BCF4240E1802005E2751 /* AppDelegate.swift in Sources */,
 				B20489B32410AE3400841AC2 /* PreferencesViewController.swift in Sources */,
+				B20489B72410B6D500841AC2 /* ContributionDepth.swift in Sources */,
+				B20489B52410B17700841AC2 /* PullGitData.swift in Sources */,
+				B20489B92410BBED00841AC2 /* ExtensionFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
