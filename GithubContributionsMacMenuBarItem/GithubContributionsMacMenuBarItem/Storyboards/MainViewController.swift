@@ -19,6 +19,8 @@ class MainViewController: NSView {
     var perDayData = [[PerDayData]]()
     var style: Style = .mono
     
+    // Intializing view
+    
     init() {
         super.init(frame: NSRect(x: 0, y: 2, width: 10, height: 18))
         ao = self.observe(\.effectiveAppearance, changeHandler: { [weak self] (_, _) in
@@ -33,6 +35,8 @@ class MainViewController: NSView {
     deinit {
         ao?.invalidate()
     }
+    
+    // Adding data to view
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -49,6 +53,8 @@ class MainViewController: NSView {
             }
         }
     }
+    
+    // Updating view with new data
     
     func update(dayData: [[PerDayData]], style: Style) {
         self.perDayData = dayData

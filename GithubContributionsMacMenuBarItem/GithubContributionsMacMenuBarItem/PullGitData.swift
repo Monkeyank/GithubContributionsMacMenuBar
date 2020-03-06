@@ -9,6 +9,7 @@
 import Foundation
 
 class PullGitData {
+    
     //Pull data from Github API for contributions
     
     static func getContributions(username: String, callback: @escaping

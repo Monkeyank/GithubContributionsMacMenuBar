@@ -19,12 +19,15 @@ class ContributionDepth {
             }
             return nil
         })
-        
+        //
         var perDayData: [[PerDayData]] = [[], [], [], [], [], [], []]
         component.forEach { (str) in
             let parameter = str.components(separatedBy: " ")
             let y = Int(parameter[5].trim("y=\"", "\""))! / 15
             let contributiondepth: Int
+            
+            // Storing contribution with color of the chart
+            
             switch parameter[6].trim("fill=\"", "\"") {
             case "#ebedf0": contributiondepth = 0
             case "#c6e48b": contributiondepth = 1
@@ -44,9 +47,12 @@ struct PerDayData {
     let contributiondepth: Int
     let count: Int
     let date: String
+    
+    // Contribution depth tagged with # of contributions and date
+    
     var description: String{
         return "contributiondepth: \(contributiondepth) count: \(count) date: \(date)"
     }
     
-    static let `default` = [[PerDayData]] (repeating: [PerDayData] (repeating: PerDayData(contributiondepth: 0, count: 0, date: "dummy"), count: 50), count: 7)
+    static let `default` = [[PerDayData]] (repeating: [PerDayData] (repeating: PerDayData(contributiondepth: 0, count: 0, date: "date"), count: 50), count: 7)
 }

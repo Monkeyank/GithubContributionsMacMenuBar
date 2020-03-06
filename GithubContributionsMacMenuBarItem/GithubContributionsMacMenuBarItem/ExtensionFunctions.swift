@@ -15,7 +15,11 @@ extension NSMenuItem {
     }
 }
 
+// Extension Function to fill a color in the contribution chart
+
 extension NSColor {
+    // Define colors for contribution chart
+    
     static let url = NSColor(named: NSColor.Name("urlColor"))!
     static let color0 = NSColor(named: NSColor.Name("color0"))!
     static let color25 = NSColor(named: NSColor.Name("color25"))!
@@ -28,10 +32,11 @@ extension NSColor {
     static let colorDark75 = NSColor(named: NSColor.Name("colorDark75"))!
     static let colorDark100 = NSColor(named: NSColor.Name("colorDark100"))!
     
-    static func fillColor(_ level: Int, _ style: Style, _ dark: Bool) -> NSColor {
+    
+    static func fillColor(_ ContributionDepth: Int, _ style: Style, _ dark: Bool) -> NSColor {
         if style == .mono {
             let white: CGFloat = dark ? 1.0 : 0.0
-            switch level {
+            switch ContributionDepth {
             case 1: return NSColor(white: white, alpha: 0.4)
             case 2: return NSColor(white: white, alpha: 0.6)
             case 3: return NSColor(white: white, alpha: 0.8)
@@ -39,7 +44,7 @@ extension NSColor {
             default: return NSColor(white: white, alpha: 0.2)
             }
         } else {
-            switch level {
+            switch ContributionDepth {
             case 1:  return dark ? NSColor.colorDark25 : NSColor.color25
             case 2:  return dark ? NSColor.colorDark50 : NSColor.color50
             case 3:  return dark ? NSColor.colorDark75 : NSColor.color75
@@ -49,7 +54,7 @@ extension NSColor {
         }
     }
 }
-
+// Extension Function to trim Strings with whitespaces
 extension String {
     func trim(_ before: String, _ after: String) -> String {
         let new = self.replacingOccurrences(of: before, with: "")
@@ -59,7 +64,7 @@ extension String {
         return NSLocalizedString(self, comment: self)
     }
 }
-
+// Extension Function to check for Dark Mode
 extension NSAppearance {
     var isDark: Bool {
         if self.name == .vibrantDark { return true }

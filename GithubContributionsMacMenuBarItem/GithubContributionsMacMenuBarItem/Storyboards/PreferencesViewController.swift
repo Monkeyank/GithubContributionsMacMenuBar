@@ -8,6 +8,8 @@
 
 import Cocoa
 
+// Add code after AppDelagate.swift is done
+
 class PreferencesViewController: NSViewController {
     
    

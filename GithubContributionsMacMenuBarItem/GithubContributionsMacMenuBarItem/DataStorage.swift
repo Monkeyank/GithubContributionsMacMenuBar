@@ -14,6 +14,7 @@ class DataStorage {
     
     private let userDefaults = UserDefaults.standard
     
+    // Storing and managing username
     var username: String {
         get {
             return userDefaults.string(forKey: "username")!
@@ -23,6 +24,7 @@ class DataStorage {
             userDefaults.synchronize()
         }
     }
+    
     var cycle: Int {
         get {
             return userDefaults.integer(forKey: "cycle")
@@ -32,6 +34,9 @@ class DataStorage {
             userDefaults.synchronize()
         }
     }
+    
+    // Style preferences being saved
+    
     var style: Style {
         get {
             return Style(rawValue: userDefaults.integer(forKey: "style"))!
@@ -42,6 +47,7 @@ class DataStorage {
         }
     }
     
+    // Storing and intializing User Defaults
     private init() {
         userDefaults.register(defaults: ["username" : "",
                                          "cycle" : 5,
