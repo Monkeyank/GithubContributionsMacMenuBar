@@ -40,7 +40,7 @@ class MainViewController: NSView {
         let dark = self.effectiveAppearance.isDark
         for i in (0 ..< 7) {
             for j in (0 ..< perDayData[i].count) {
-                NSColor.fillColor(perDayData[i][j].level, style, dark).setFill()
+                NSColor.fillColor(perDayData[i][j].contributiondepth, style, dark).setFill()
                 let rect = NSRect(x: 2.5 * CGFloat(j),
                                   y: 15.5 - 2.5 * CGFloat(i),
                                   width: 2.0, height: 2.0)
