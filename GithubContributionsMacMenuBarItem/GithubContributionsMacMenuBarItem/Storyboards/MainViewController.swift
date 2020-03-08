@@ -56,10 +56,10 @@ class MainViewController: NSView {
     
     // Updating view with new data
     
-    func update(dayData: [[PerDayData]], style: Style) {
-        self.perDayData = dayData
+    func update(perdayData: [[PerDayData]], style: Style) {
+        self.perDayData = perdayData
         self.style = style
-        let width = 0.5 * CGFloat(5 * dayData[0].count - 1)
+        let width = 0.5 * CGFloat(5 * perdayData[0].count - 1)
         self.frame.size = CGSize(width: width, height: 18.0)
         self.needsDisplay = true
     }
