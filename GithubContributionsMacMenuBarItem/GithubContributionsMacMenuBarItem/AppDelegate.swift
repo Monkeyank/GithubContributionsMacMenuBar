@@ -8,8 +8,6 @@
 
 import Cocoa
 
-// Todo: Debug Optional Wrapper Error
-
 @NSApplicationMain
 
 class AppDelegate: NSObject, NSApplicationDelegate {

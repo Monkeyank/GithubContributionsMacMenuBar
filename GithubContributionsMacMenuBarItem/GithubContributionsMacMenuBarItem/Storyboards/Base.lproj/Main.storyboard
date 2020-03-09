@@ -16,9 +16,6 @@
                                     <items>
                                         <menuItem title="About GitContributions" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
-                                            </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Quit GitContributions" keyEquivalent="q" id="4sb-4s-VLi">
@@ -35,7 +32,11 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="GithubContributionsMacMenuBarItem" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="GithubContributionsMacMenuBarItem" customModuleProvider="target">
+                    <connections>
+                        <outlet property="menu" destination="oef-qK-8et" id="Kpb-KF-Hbh"/>
+                    </connections>
+                </customObject>
                 <menu id="oef-qK-8et">
                     <items>
                         <menuItem title="Preferences…" id="xtq-O3-LF6">
