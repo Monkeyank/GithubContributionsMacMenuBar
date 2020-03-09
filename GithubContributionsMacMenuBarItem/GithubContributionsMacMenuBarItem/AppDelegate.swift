@@ -8,7 +8,7 @@
 
 import Cocoa
 
-// Todo: Add open preferences, then add preferences to UI Instance Init
+// Todo: Debug Optional Wrapper Error
 
 @NSApplicationMain
 
@@ -22,8 +22,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var button: NSStatusBarButton?
     private let mainView = MainViewController()
     private var timer: Timer?
+    private var preferencesViewController: NSWindowController?
     
     var window: NSWindow!
+    
+    
+    class var shared: AppDelegate {
+        return NSApplication.shared.delegate as! AppDelegate
+    }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         setNotifications()
@@ -67,6 +73,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
     }
     
+    @objc func openPreferences() {
+        if preferencesViewController == nil {
+            let sb = NSStoryboard(name: "Preferences", bundle: nil)
+            preferencesViewController = (sb.instantiateInitialController() as! NSWindowController)
+            preferencesViewController!.window?.delegate = self
+        }
+        NSApp.activate(ignoringOtherApps: true)
+        preferencesViewController!.showWindow(nil)
+    }
+    
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: Double(ds.cycle * 60), repeats: true, block: { (_) in self.fetchData()
         })
@@ -98,8 +114,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.menu = menu
         button = statusItem.button
         button?.addSubview(mainView)
-        // menu.item(withTag: 0)?.setAction(target: self, selector:             #selector(openPreferences))
-            menu.item(withTag: 1)?.setAction(target: self, selector: #selector(openAbout))
+        menu.item(withTag: 0)?.setAction(target: self, selector:#selector(openPreferences))
+        menu.item(withTag: 1)?.setAction(target: self, selector:#selector(openAbout))
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -110,3 +126,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
 }
 
+extension AppDelegate: NSWindowDelegate {
+    
+    func windowWillClose(_ notification: Notification) {
+        guard let window = notification.object as? NSWindow else { return }
+        if window == preferencesViewController?.window {
+            preferencesViewController = nil
+        }
+    }
+    
+}

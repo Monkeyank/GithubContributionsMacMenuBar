@@ -8,7 +8,7 @@
         <!--Window Controller-->
         <scene sceneID="4uk-jS-160">
             <objects>
-                <windowController id="DU7-l1-umW" sceneMemberID="viewController">
+                <windowController showSeguePresentationStyle="single" id="DU7-l1-umW" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="4d9-cT-3So">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -29,8 +29,8 @@
         <!--View Controller-->
         <scene sceneID="2Qo-sN-Zj7">
             <objects>
-                <viewController id="YNe-Pq-BQS" sceneMemberID="viewController">
-                    <view key="view" misplaced="YES" id="HXR-Mp-Sec">
+                <viewController showSeguePresentationStyle="single" id="YNe-Pq-BQS" sceneMemberID="viewController">
+                    <view key="view" id="HXR-Mp-Sec">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="128"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>

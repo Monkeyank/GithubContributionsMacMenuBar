@@ -8,22 +8,48 @@
 
 import Cocoa
 
-// Add code after AppDelagate.swift is done
 
 class PreferencesViewController: NSViewController {
     
+    @IBOutlet weak var textField: NSTextField!
+    @IBOutlet weak var cyclePopUp: NSPopUpButton!
+    @IBOutlet weak var stylePopUp: NSPopUpButton!
+    
+    private let ds = DataStorage.shared
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        textField.delegate = self
+        textField.stringValue = ds.username
+        cyclePopUp.selectItem(withTag: ds.cycle)
+        stylePopUp.selectItem(at: ds.style == .mono ? 0 : 1)
+    }
+    
+    @IBAction func cycleChange(_ sender: NSPopUpButton) {
+        ds.cycle = sender.selectedTag()
+        AppDelegate.shared.stopTimer()
+        AppDelegate.shared.startTimer()
+    }
+    
+    @IBAction func styleChange(_ sender: NSPopUpButton) {
+        ds.style = Style(rawValue: sender.indexOfSelectedItem)!
+    }
    
     
 }
 
 extension PreferencesViewController: NSTextFieldDelegate {
     
-    
+    func controlTextDidEndEditing(_ obj: Notification) {
+        ds.username = textField.stringValue
+        AppDelegate.shared.fetchData()
+    }
     
 }
 
 class PreferencesWindow: NSWindow {
     
-    
-    
+    override func cancelOperation(_ sender: Any?) {
+        self.close()
+    }
 }
