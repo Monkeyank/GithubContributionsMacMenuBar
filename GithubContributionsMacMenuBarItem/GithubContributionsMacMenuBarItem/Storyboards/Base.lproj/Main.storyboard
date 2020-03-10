@@ -43,14 +43,14 @@
                             <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" tag="-1" id="8eT-Bs-jQm"/>
+                        <menuItem title="About GitContributions" tag="1" id="h6p-qQ-7qS">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
                         <menuItem title="Quit GitContributions" tag="2" id="xTC-46-0Gu">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="terminate:" target="Ady-hI-5gd" id="uVA-ZV-k7P"/>
                             </connections>
-                        </menuItem>
-                        <menuItem title="About GitContributions" tag="1" id="h6p-qQ-7qS">
-                            <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
                     </items>
                 </menu>

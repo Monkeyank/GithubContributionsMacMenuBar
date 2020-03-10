@@ -132,6 +132,11 @@
                     </view>
                 </viewController>
                 <customObject id="6ie-Re-dJU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="RGW-53-cgS" customClass="PreferencesViewController">
+                    <connections>
+                        <outlet property="CyclePopUp" destination="F5z-ye-xI7" id="86b-dK-HCu"/>
+                    </connections>
+                </userDefaultsController>
             </objects>
             <point key="canvasLocation" x="52" y="520"/>
         </scene>

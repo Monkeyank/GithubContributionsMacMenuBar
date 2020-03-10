@@ -13,7 +13,7 @@ class PullGitData {
     //Pull data from Github API for contributions
     
     static func getContributions(username: String, callback: @escaping (_ response: String?, _ error: Error?) -> ()) {
-        guard let url = URL(string: "https://github.com/users/\(username)/contributions") else {
+        guard let url = URL(string: "https://github.com/users/monkeyank/contributions") else {
             return
         }
         let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -30,7 +30,7 @@ class PullGitData {
                 } else {
                     if var status = httpResponse.allHeaderFields["Status"] as? String {
                         if statusCode == 404 {
-                            status = "notFound".localized
+                            status = "notFound"
                         }
                         let info: [String : Any] = [NSLocalizedDescriptionKey : status]
                         let error = NSError(domain: "Git Contributions", code: statusCode, userInfo: info)
