@@ -29,7 +29,7 @@
         <!--Preferences View Controller-->
         <scene sceneID="2Qo-sN-Zj7">
             <objects>
-                <viewController showSeguePresentationStyle="single" id="YNe-Pq-BQS" userLabel="Preferences View Controller" sceneMemberID="viewController">
+                <viewController showSeguePresentationStyle="single" id="YNe-Pq-BQS" userLabel="Preferences View Controller" customClass="PreferencesViewController" customModule="GithubContributionsMacMenuBarItem" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="9DL-r9-vZI">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="128"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -83,6 +83,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="cycleChange:" target="YNe-Pq-BQS" id="SNe-BG-CFz"/>
+                                </connections>
                             </popUpButton>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WiD-4j-GVs" userLabel="Style Pop Up">
                                 <rect key="frame" x="278" y="14" width="120" height="25"/>
@@ -99,6 +102,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="styleChange:" target="YNe-Pq-BQS" id="ssd-rL-3hk"/>
+                                </connections>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Smg-5X-6Zn">
                                 <rect key="frame" x="233" y="20" width="39" height="16"/>
@@ -130,6 +136,11 @@
                             <constraint firstItem="z45-nC-BxA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9DL-r9-vZI" secondAttribute="leading" constant="20" symbolic="YES" id="wiL-qj-gaY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="CyclePopUp" destination="cWl-nv-egJ" id="cdv-qx-8J7"/>
+                        <outlet property="stylePopUp" destination="WiD-4j-GVs" id="8Cx-5S-rq9"/>
+                        <outlet property="textField" destination="Nde-kF-fao" id="t4W-NS-iTC"/>
+                    </connections>
                 </viewController>
                 <customObject id="6ie-Re-dJU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

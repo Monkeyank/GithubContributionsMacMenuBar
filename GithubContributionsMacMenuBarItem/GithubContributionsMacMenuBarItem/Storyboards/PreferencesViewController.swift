@@ -14,14 +14,14 @@ class PreferencesViewController: NSViewController {
     @IBOutlet weak var textField: NSTextField!
     @IBOutlet weak var stylePopUp: NSPopUpButton!
     
-    @IBOutlet weak var CyclePopUp: NSPopUpButton!
+    @IBOutlet weak var cyclePopUp: NSPopUpButton!
     private let ds = DataStorage.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.delegate = self
         textField.stringValue = ds.username
-        CyclePopUp.selectItem(withTag: ds.cycle)
+        cyclePopUp.selectItem(withTag: ds.cycle)
         stylePopUp.selectItem(at: ds.style == .mono ? 0 : 1)
     }
     
