@@ -51,7 +51,7 @@ class DataStorage {
     private init() {
         userDefaults.register(defaults: ["username" : "",
                                          "cycle" : 5,
-                                         "style" : Style.mono.rawValue])
+                                         "style" : Style.green.rawValue])
     }
     
 }

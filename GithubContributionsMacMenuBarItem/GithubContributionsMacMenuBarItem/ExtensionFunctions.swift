@@ -64,6 +64,7 @@ extension String {
         return NSLocalizedString(self, comment: self)
     }
 }
+
 // Extension Function to check for Dark Mode
 extension NSAppearance {
     var isDark: Bool {

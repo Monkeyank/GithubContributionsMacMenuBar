@@ -10,7 +10,7 @@ import Cocoa
 
 enum Style: Int {
     case mono = 0
-    case grass = 1
+    case green = 1
 }
 
 class MainViewController: NSView {

@@ -64,7 +64,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let key = NSApplication.AboutPanelOptionKey.credits
         NSApp.orderFrontStandardAboutPanel (options: [key: mutableAttrStr])
         var attr: [NSAttributedString.Key : Any] = [.foregroundColor : NSColor.textColor, .paragraphStyle : text]
-        mutableAttrStr.append(NSAttributedString(string: "oss".localized, attributes: attr))
+        mutableAttrStr.append(NSAttributedString(string: "By", attributes: attr))
         let url = "https://github.com/Monkeyank/GithubContributionsMacMenuBar"
         attr = [.foregroundColor : NSColor.url, .link : url, .paragraphStyle : text]
         mutableAttrStr.append(NSAttributedString(string: url, attributes: attr))
