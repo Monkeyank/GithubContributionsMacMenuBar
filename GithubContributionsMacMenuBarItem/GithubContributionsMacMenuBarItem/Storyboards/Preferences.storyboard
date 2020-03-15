@@ -138,6 +138,7 @@
                     </view>
                     <connections>
                         <outlet property="CyclePopUp" destination="cWl-nv-egJ" id="cdv-qx-8J7"/>
+                        <outlet property="cyclePopUp" destination="cWl-nv-egJ" id="iuN-Ju-ejr"/>
                         <outlet property="stylePopUp" destination="WiD-4j-GVs" id="8Cx-5S-rq9"/>
                         <outlet property="textField" destination="Nde-kF-fao" id="t4W-NS-iTC"/>
                     </connections>

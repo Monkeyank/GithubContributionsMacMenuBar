@@ -18,6 +18,7 @@ extension NSMenuItem {
 // Extension Function to fill a color in the contribution chart
 
 extension NSColor {
+    
     // Define colors for contribution chart
     
     static let url = NSColor(named: NSColor.Name("urlColor"))!
@@ -54,7 +55,9 @@ extension NSColor {
         }
     }
 }
+
 // Extension Function to trim Strings with whitespaces
+
 extension String {
     func trim(_ before: String, _ after: String) -> String {
         let new = self.replacingOccurrences(of: before, with: "")
@@ -65,7 +68,8 @@ extension String {
     }
 }
 
-// Extension Function to check for Dark Mode
+// Extension Function to check for Dark Mode and MacOS version
+
 extension NSAppearance {
     var isDark: Bool {
         if self.name == .vibrantDark { return true }
