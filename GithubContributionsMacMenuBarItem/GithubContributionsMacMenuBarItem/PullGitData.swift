@@ -13,7 +13,7 @@ class PullGitData {
     //Pull data from Github API for contributions
     
     static func getContributions(username: String, callback: @escaping (_ response: String?, _ error: Error?) -> ()) {
-        guard let url = URL(string: "https://github.com/users/monkeyank/contributions") else {
+        guard let url = URL(string: "https://github.com/users/\(username)/contributions") else {
             return
         }
         let session = URLSession(configuration: URLSessionConfiguration.default)

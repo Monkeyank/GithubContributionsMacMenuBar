@@ -20,6 +20,7 @@ extension NSMenuItem {
 extension NSColor {
     
     // Define colors for contribution chart
+    // TODO: Add colors to Assets.xcassets
     
     static let url = NSColor(named: NSColor.Name("urlColor"))!
     static let color0 = NSColor(named: NSColor.Name("color0"))!
@@ -62,9 +63,6 @@ extension String {
     func trim(_ before: String, _ after: String) -> String {
         let new = self.replacingOccurrences(of: before, with: "")
         return new.replacingOccurrences(of: after, with: "")
-    }
-    var localized: String {
-        return NSLocalizedString(self, comment: self)
     }
 }
 
