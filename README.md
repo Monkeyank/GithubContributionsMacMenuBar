@@ -14,3 +14,5 @@ It will say not found, but above the contributions chart should appear.
 Click it and open preferences.
 
 Enter your username and continue!
+
+TODO: Fix contribution graph!
