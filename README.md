@@ -1,6 +1,6 @@
 # GithubContributionsMacMenuBar
 A Mac Menu Bar item to keep track of your Github Contributions
-![Preview](https://github.com/Monkeyank/GithubContributionsMacMenuBar/blob/master/Screen Shot 2020-03-15 at 5.34.42 PM.png)
+![Preview](https://github.com/Monkeyank/GithubContributionsMacMenuBar/blob/master/Screen%20Shot%202020-03-15%20at%205.34.42%20PM.png)
 To use download from the releases page
 
 Double click and click ok
