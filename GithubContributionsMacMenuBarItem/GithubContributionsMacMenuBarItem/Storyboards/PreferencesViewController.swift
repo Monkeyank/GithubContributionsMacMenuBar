@@ -13,7 +13,7 @@ class PreferencesViewController: NSViewController {
     
     @IBOutlet weak var textField: NSTextField!
     @IBOutlet weak var stylePopUp: NSPopUpButton!
-    
+    @IBOutlet weak var colorPopUp: NSPopUpButton!
     @IBOutlet weak var cyclePopUp: NSPopUpButton!
     private let ds = DataStorage.shared
     
@@ -22,7 +22,13 @@ class PreferencesViewController: NSViewController {
         textField.delegate = self
         textField.stringValue = ds.username
         cyclePopUp.selectItem(withTag: ds.cycle)
-        stylePopUp.selectItem(at: ds.style == .mono ? 0 : 1)
+        colorPopUp.selectItem(at: ds.color.rawValue)
+        stylePopUp.selectItem(at: ds.style.rawValue)
+    }
+    
+    @IBAction func colorChange(_ sender: NSPopUpButton) {
+        ds.color = Color(rawValue: sender.indexOfSelectedItem)!
+        AppDelegate.shared.updateData()
     }
     
     @IBAction func cycleChange(_ sender: NSPopUpButton) {
@@ -33,6 +39,12 @@ class PreferencesViewController: NSViewController {
     
     @IBAction func styleChange(_ sender: NSPopUpButton) {
         ds.style = Style(rawValue: sender.indexOfSelectedItem)!
+    }
+    
+    func showAlert(error: Error) {
+        guard let window = self.view.window else { return }
+        let alert = NSAlert(error: error)
+        alert.beginSheetModal(for: window, completionHandler: nil)
     }
    
     

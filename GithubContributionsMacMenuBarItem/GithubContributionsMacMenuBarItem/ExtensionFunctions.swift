@@ -8,6 +8,12 @@
 
 import Cocoa
 
+func logoutput(_ item: Any..., file: String = #file, line: Int = #line, function: String = #function) {
+    #if DEBUG
+    Swift.print("Log: \(file):Line\(line):\(function)", item)
+    #endif
+}
+
 extension NSMenuItem {
     public func setAction(target: AnyObject, selector: Selector) {
         self.target = target
@@ -35,8 +41,8 @@ extension NSColor {
     static let colorDark100 = NSColor(named: NSColor.Name("colorDark100"))!
     
     
-    static func fillColor(_ ContributionDepth: Int, _ style: Style, _ dark: Bool) -> NSColor {
-        if style == .mono {
+    static func fillColor(_ ContributionDepth: Int, _ color: Color, _ dark: Bool) -> NSColor  {
+        if color == .mono {
             let white: CGFloat = dark ? 1.0 : 0.0
             switch ContributionDepth {
             case 1: return NSColor(white: white, alpha: 0.4)
@@ -60,9 +66,21 @@ extension NSColor {
 // Extension Function to trim Strings with whitespaces
 
 extension String {
+    func match(_ pattern: String) -> String? {
+        guard
+            let regex = try? NSRegularExpression(pattern: pattern),
+            let matched = regex.firstMatch(in: self, range: NSRange(location: 0, length: self.count))
+            else { return nil }
+        return NSString(string: self).substring(with: matched.range(at: 0))
+    }
+    
     func trim(_ before: String, _ after: String) -> String {
         let new = self.replacingOccurrences(of: before, with: "")
         return new.replacingOccurrences(of: after, with: "")
+    }
+    
+    var localized: String {
+        return NSLocalizedString(self, comment: self)
     }
 }
 

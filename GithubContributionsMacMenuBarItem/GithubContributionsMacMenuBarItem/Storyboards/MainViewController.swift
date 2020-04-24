@@ -8,16 +8,22 @@
 
 import Cocoa
 
-enum Style: Int {
+enum Color: Int {
     case mono = 0
     case green = 1
+}
+
+enum Style: Int {
+    case block = 0
+    case dot = 1
 }
 
 class MainViewController: NSView {
     
     private var ao: NSKeyValueObservation?
     var perDayData = [[PerDayData]]()
-    var style: Style = .mono
+    var color: Color = .mono
+    var style: Style = .block
     
     // Intializing view
     
@@ -44,7 +50,7 @@ class MainViewController: NSView {
         let dark = self.effectiveAppearance.isDark
         for i in (0 ..< 7) {
             for j in (0 ..< perDayData[i].count) {
-                NSColor.fillColor(perDayData[i][j].contributiondepth, style, dark).setFill()
+                NSColor.fillColor(perDayData[i][j].contributiondepth, color, dark).setFill()
                 let rect = NSRect(x: 2.5 * CGFloat(j),
                                   y: 15.5 - 2.5 * CGFloat(i),
                                   width: 2.0, height: 2.0)
@@ -56,11 +62,18 @@ class MainViewController: NSView {
     
     // Updating view with new data
     
-    func update(perdayData: [[PerDayData]], style: Style) {
-        self.perDayData = perdayData
+    func update(_ perDayData: [[PerDayData]], _ color: Color, _ style: Style) {
+        self.perDayData = perDayData
+        self.color = color
         self.style = style
-        let width = 0.5 * CGFloat(5 * perdayData[0].count - 1)
+        let width = 0.5 * CGFloat(5 * perDayData[0].count - 1)
         self.frame.size = CGSize(width: width, height: 18.0)
+        self.needsDisplay = true
+    }
+    
+    func update(_ color: Color, _ style: Style) {
+        self.color = color
+        self.style = style
         self.needsDisplay = true
     }
     

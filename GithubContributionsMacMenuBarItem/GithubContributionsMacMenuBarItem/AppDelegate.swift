@@ -33,25 +33,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         setNotifications()
         setUserInterface()
         startTimer()
+        if ds.username.isEmpty {
+            openPreferences()
+        }
     }
+    
     
     func fetchData() {
         PullGitData.getContributions(username: ds.username) { [unowned self] (html, error) in
-            let perdayData: [[PerDayData]]
+            let perDayData: [[PerDayData]]
             if let html = html {
-                perdayData = ContributionDepth.parse(html: html)
+                perDayData = ContributionDepth.parse(html: html)
             } else {
-                perdayData = PerDayData.default
-                if let error = error {
+                perDayData = PerDayData.default
+                if let error = error, let wc = self.preferencesViewController{
                     DispatchQueue.main.async {
-                        let alert = NSAlert(error: error)
-                        alert.runModal()
+                        (wc.contentViewController as! PreferencesViewController).showAlert(error: error)
                     }
                 }
             }
-            self.statusItem.length = 0.5 * CGFloat(5 * perdayData[0].count - 1)
+            self.statusItem.length = 0.5 * CGFloat(5 * perDayData[0].count - 1)
             DispatchQueue.main.async {
-                self.mainView.update(perdayData: perdayData, style: self.ds.style)
+                self.statusItem.length = 0.5 * CGFloat(5 * perDayData[0].count - 1) + 6.0
+                self.mainView.update(perDayData, self.ds.color, self.ds.style)
             }
         }
     }
@@ -121,8 +125,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         nc.removeObserver(self)
     }
     
-    
+    func updateData() {
+        self.mainView.update(ds.color, ds.style)
+    }
 }
+
+
 
 extension AppDelegate: NSWindowDelegate {
     
